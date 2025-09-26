@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Safety Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1 class="app-title">Weather Safety Dashboard</h1>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Enter city name...">
+            <button id="search-btn">Search</button>
+        </div>
+        <button id="theme-toggle">☀️ Light</button>
+    </header>
+
+    <main class="dashboard">
+        <section id="current-weather">
+            <h2 id="city-name"></h2>
+            <p id="date-time"></p>
+            <div class="weather-details">
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <div>
+                    <p id="temperature"></p>
+                    <p id="description"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="safety-alerts">
+            <h3>Safety Alerts</h3>
+            <div id="alert-box" class="alert-box">
+                <p id="alert-message"></p>
+            </div>
+        </section>
+
+        <section id="forecast">
+            <h3>5-Day Forecast</h3>
+            <div class="forecast-container">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Data from <a href="https://openweathermap.org/" target="_blank">OpenWeather API</a> | Demo Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

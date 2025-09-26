@@ -1,0 +1,255 @@
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --safe-color: #28a745;
+    --caution-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#city-input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #0056b3;
+}
+
+.dashboard {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+#current-weather, #safety-alerts, #forecast {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#current-weather h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.weather-details {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+}
+
+#temperature {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+#current-weather:hover{
+    background-color: #28a745;
+}
+
+.alert-box {
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin-top: 1rem;
+    animation: glowing 1.5s infinite alternate;
+}
+
+.alert-box.safe {
+    background-color: var(--safe-color);
+    box-shadow: 0 0 10px var(--safe-color);
+}
+
+.alert-box.caution {
+    background-color: var(--caution-color);
+    box-shadow: 0 0 10px var(--caution-color);
+}
+
+.alert-box.danger {
+    background-color: var(--danger-color);
+    box-shadow: 0 0 10px var(--danger-color);
+}
+
+#safety-alerts:hover{
+    background-color: #28a745;
+}
+
+.forecast-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.forecast-card {
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s, box-shadow 0.3s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #28a745;
+}
+
+.forecast-card img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Glowing effect for alerts */
+@keyframes glowing {
+    from {
+        box-shadow: 0 0 5px currentColor;
+        opacity: 0.9;
+    }
+    to {
+        box-shadow: 0 0 20px currentColor;
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .dashboard {
+        grid-template-columns: 2fr 1fr;
+    }
+    #current-weather {
+        grid-column: 1 / 2;
+    }
+    #safety-alerts {
+        grid-column: 2 / 3;
+    }
+    #forecast {
+        grid-column: 1 / 3;
+    }
+}
+/* Dark mode*/
+:root {
+    /* Light Mode Variables */
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --safe-color: #28a745;
+    --caution-color: #ffc107;
+    --danger-color: #dc3545;
+}
+
+body.dark-mode {
+    /* Dark Mode Variables */
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --accent-color: #64b5f6;
+    --safe-color: #4caf50;
+    --caution-color: #ffeb3b;
+    --danger-color: #f44336;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    /* ... existing styles ... */
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dashboard, #current-weather, #safety-alerts, #forecast {
+    /* ... existing styles ... */
+    background-color: var(--card-bg);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+#theme-toggle{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Makes the icon bigger */
+    padding: 0;
+    transition: transform 0.2s ease-in-out;
+}
+/* Dark mode boarder colour*/
+body.dark-mode #current-weather,
+body.dark-mode #safety-alerts,
+body.dark-mode #forecast {
+    box-shadow: 0 0 10px 5px rgba(100, 246, 156, 0.6); /* This is the glowing effect */
+    border: 2px solid var(--accent-color); /* Optional: A thin border to define the shape */
+}
